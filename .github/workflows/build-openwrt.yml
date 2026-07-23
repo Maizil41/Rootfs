@@ -151,6 +151,15 @@ jobs:
         echo "FILE_PATH=$FILE_PATH" >> $GITHUB_ENV
         echo -e "Found Rootfs Path: $FILE_PATH"
 
+    - name: Check token
+      run: |
+        if [ -z "${{ secrets.GH_TOKEN }}" ]; then
+          echo "GH_TOKEN kosong"
+          exit 1
+        else
+          echo "GH_TOKEN ada"
+        fi
+
     - name: Create Release
       uses: softprops/action-gh-release@v2
       env:
