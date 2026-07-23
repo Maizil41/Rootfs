@@ -154,7 +154,7 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@v2
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       with:
         name: Mutiara-Wrt ${{ github.event.inputs.openwrt_ver }}
         tag_name: ${{ github.event.inputs.openwrt_ver }}
