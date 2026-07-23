@@ -20,6 +20,12 @@ on:
           - '23.05.5'
           - '24.10.0'
           - '24.10.1'
+          - '24.10.2'
+          - '24.10.3'
+          - '24.10.4'
+          - '24.10.5'
+          - '24.10.6'
+          - '24.10.7'
       openwrt_target:
         description: 'Select OpenWrt Targets'
         required: true
