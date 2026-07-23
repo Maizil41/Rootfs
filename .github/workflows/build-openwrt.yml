@@ -160,16 +160,10 @@ jobs:
         echo "FILE_PATH=$FILE_PATH" >> $GITHUB_ENV
         echo -e "Found Rootfs Path: $FILE_PATH"
 
-    - name: Create Release
-      uses: softprops/action-gh-release@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
       with:
-        name: Mutiara-Wrt ${{ github.event.inputs.openwrt_ver }}
-        tag_name: ${{ github.event.inputs.openwrt_ver }}
-        draft: false
-        prerelease: false
-        files: |
-              ${{ env.FILE_PATH }}
-        body: |
-              Mutiara-Wrt ${{ github.event.inputs.openwrt_ver }} Rootfs
+        name: Mutiara-Wrt-${{ github.event.inputs.openwrt_ver }}
+        path: ${{ env.FILE_PATH }}
+        if-no-files-found: error
+        compression-level: 0
