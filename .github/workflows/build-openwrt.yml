@@ -63,7 +63,7 @@ jobs:
       run: |
         sudo apt update -y > /dev/null 2>&1
         sudo apt install net-tools make gawk git curl unzip bzip2 tar zstd -y > /dev/null 2>&1
-        sudo apt install -y $(curl -fsSL https://is.gd/depend_ubuntu2204_openwrt) > /dev/null 2>&1
+        sudo apt install -y $(curl -fsSL https://raw.githubusercontent.com/ophub/amlogic-s9xxx-armbian/refs/heads/main/compile-kernel/tools/script/ubuntu2204-build-armbian-depends) > /dev/null 2>&1
 
     - name: Download Image Builder
       run: |
